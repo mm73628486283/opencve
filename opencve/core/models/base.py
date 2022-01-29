@@ -22,7 +22,7 @@ class BaseModel(models.Model):
 
 
 def _pre_save(instance, **kwargs):
-    instance.date_updated = timezone.now()
+    instance.updated_at = timezone.now()
 
 
 signals.pre_save.connect(_pre_save)
