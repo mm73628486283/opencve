@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Sign in - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="login-box">
+    <div class="login-box-body">
+        <div class="login-logo">
+            <img src="{% static 'img/logo_full_48.png' %}" alt="Logo">
+            <a href="{% url 'home' %}">OpenCVE.io</a>
+        </div>
+        <p class="login-box-msg"><strong>Sign in to your account</strong></p>
+        {% crispy form %}
+        <p>&nbsp;</p>
+        <p class="center">
+            <a href="#">Forgot password ?</a><br>
+            <a href="{% url 'register' %}" class="text-center">Register a new membership</a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

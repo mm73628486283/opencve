@@ -9,22 +9,36 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='CweModel',
+            name="CweModel",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
-                ('created_at', models.DateTimeField(db_index=True, default=django.utils.timezone.now)),
-                ('updated_at', models.DateTimeField(db_index=True, default=django.utils.timezone.now)),
-                ('cwe_id', models.CharField(db_index=True, max_length=16)),
-                ('name', models.CharField(max_length=256)),
-                ('description', models.TextField()),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4, primary_key=True, serialize=False
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        db_index=True, default=django.utils.timezone.now
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        db_index=True, default=django.utils.timezone.now
+                    ),
+                ),
+                ("cwe_id", models.CharField(db_index=True, max_length=16)),
+                ("name", models.CharField(max_length=256)),
+                ("description", models.TextField()),
             ],
             options={
-                'db_table': 'opencve_cwes',
+                "db_table": "opencve_cwes",
             },
         ),
     ]

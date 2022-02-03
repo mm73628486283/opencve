@@ -20,7 +20,6 @@ class BaseModel(models.Model):
         return """<{} '{}'>""".format(self.__class__.__name__, self.id)
 
 
-
 def _pre_save(instance, **kwargs):
     instance.updated_at = timezone.now()
 
