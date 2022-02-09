@@ -18,13 +18,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-{% block content %}{% endblock %}
+    <div class="login-box">
+        <div class="login-box-body">
+            <div class="login-logo">
+                <img src="{% static 'img/logo_full_48.png' %}" alt="Logo">
+                <a href="{% url 'home' %}">OpenCVE.io</a>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags}}">
+                    <p>{{ message }}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+            <p class="login-box-msg"><strong>{% block header %}{% endblock %}</strong></p>
+            {% block content %}{% endblock %}
+            <p>&nbsp;</p>
+            <p class="center">
+                {% block links %}{% endblock %}
+            </p>
+
+        </div>
+    </div>
 </body>
 </html>
