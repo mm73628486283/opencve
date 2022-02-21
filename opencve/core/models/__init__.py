@@ -1,1 +1,1 @@
-from .cwe import *
+from core.models.cwe import *

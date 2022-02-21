@@ -11,4 +11,4 @@ class CweView(ListView):
     queryset = CweModel.objects.order_by("-name")
     context_object_name = "cwes"
     template_name = "core/cwes_list.html"
-    paginate_by = 2
+    paginate_by = 20

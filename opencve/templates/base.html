@@ -36,10 +36,10 @@
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <li class="hidden-xs">
-                                <a href="#">Sign in</a>
+                                <a href="{% url 'login' %}">Sign in</a>
                             </li>
                             <li class="hidden-xs">
-                                <a href="#">Register</a>
+                                <a href="{% url 'register' %}">Register</a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +59,7 @@
                     </div>
         
                     <ul class="sidebar-menu" data-widget="tree">
-                        <li><a href="#"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+                        <li><a href="{% url 'home' %}"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
                         <li><a href="#"><i class="fa fa-list-alt"></i> <span>Reports</span></a></li>
                         <li><a href="#"><i class="fa fa-shield"></i> <span>Vulnerabilities (CVE)</span></a></li>
                         <li><a href="#"><i class="fa fa-tags"></i> <span> Vendors & Products (CPE)</span></a></li>
